@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Project 2 Report</title>
+<style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        
+@media (max-width: 750px) { html { max-width: 100%; padding: 0 0.5rem; } main { padding: 0.5rem 1rem; } h1 { font-size: 2rem; } }
+figure img { max-width:100%; height:auto; }
+li { margin-bottom: 0.85em; }
+</style>
+</head>
+<body>
+<header>
+<h1>
+<small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+<p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+</header>
+<main>
+<h2>Proposition: The gender gap in secondary-school enrollment has largely closed worldwide.</h2>
+<section>
+<h3>FOR the Proposition</h3>
+<figure>
+<img alt="Stacked bars comparing secondary-school enrollment gender gap sizes in 2000 and 2018" src="graph1.png" style="display:block;max-width:100%;height:auto;margin:auto;"/>
+<figcaption>More countries now have small secondary-enrollment gaps</figcaption>
+</figure>
+<p>Design Decisions and Rationale:</p>
+<ul><li><strong>Grouping gap sizes — Score: +1.</strong> We grouped countries into three gap ranges to make the pattern easier to see. The small-gap share rose from 59% to 69%, supporting the proposition. However, the five-point cutoff can hide differences within that group. So, showing every country would give more detail but make the chart harder to read.</li><li><strong>Using bars and color — Score: +1.5.</strong> We used two equal-length stacked bars to compare the gap categories in 2000 and 2018. Dark teal highlights small gaps and draws attention to progress, while lighter colors describe larger gaps. Separate bars can show each category’s change more clearly but weaken the overall message.</li><li><strong>Highlighting progress with text — Score: +1.</strong> The title highlights that more countries have small enrollment gaps. The label shows that this number grew from 57 to 66 countries. The drop in the median gap from 4.0 to 2.6 percentage points adds more support. They all convey the message of greater equality. A neutral title would be less persuasive. However, the chart covers only 96 countries through 2018, so it cannot fully support a claim about the whole world today.</li></ul>
+</section>
+<section>
+<h3>AGAINST the Proposition</h3>
+<figure>
+<img alt="Dot plot of absolute secondary-school enrollment gender gaps greater than five percentage points" src="graph2.png" style="display:block;max-width:100%;height:auto;margin:auto;"/>
+<figcaption>Substantial Gender Gaps Persist Across Many Countries</figcaption>
+</figure>
+<p>Design Decisions and Rationale:</p>
+<ul><li><strong>Data choosing and cutoff — Score: -1</strong> The measurement of the worldwide gender gap in secondary-school enrollment is blurry. The overall mean gap across all countries may be small, so we chose to show individual-country data instead. In fact, most countries have gender gaps within 0–10 percentage points. However, because we wanted readers to notice that there are still many countries with relatively large gaps, we set the graph cutoff at 5 rather than 0 and removed countries with gaps below 5. This makes countries with gaps above 10 appear to occupy a larger share of the visualization than they would if all countries were shown.</li><li><strong>Different color point and dispersion degree — Score: -2</strong> Red and darker colors usually attract more visual attention, so the points become progressively redder and darker as the gender gap increases. In addition, because the y-coordinate does not encode any actual variable, we adjusted the vertical dispersion so that points between 10 and 25 percentage points are more concentrated near the center of the graph. This makes the larger-gap countries easier to notice and visually groups them together, which can make them appear more prevalent than they actually are.</li><li><strong>Reference line and background hint — Score: -1.5</strong> We added reference lines at 10 and 15 percentage points and divided the background into increasingly stronger color regions: pale yellow for 5–10, light orange for 10–15, and light red for 15–25. These visual thresholds encourage readers to interpret gaps above 10, and especially above 15, as increasingly serious even though these cutoff values are design choices rather than universally defined standards. The background shading also creates a visual progression from less concerning to more concerning gaps, which draws more attention toward the right side of the chart.</li><li><strong>Title  — Score: -1</strong> The title, “Substantial Gender Gaps Persist Across Many Countries,” states the intended conclusion before readers inspect the individual data points. Instead of using a neutral title such as “Distribution of Gender Gaps in Secondary-School Enrollment,” the wording frames the remaining large gaps as the main takeaway. The subtitle does provide important context about the 5-to-25-point filtering, which makes the framing somewhat more transparent, but the title still encourages readers to focus on persistence and severity rather than on the fact that many countries have relatively small gaps.</li></ul>
+</section>
+<section>
+<h2>Final Reflection</h2>
+<p>When crafting these two opposing visualizations, it was interesting to discover how information from the same dataset could be interpreted so diversely and manipulated in such a way to explore separate narratives. Performing the straightforward task of simply analyzing the enrollment rates of males and females across each specific country was effective, and likely most people’s first instinct. It was concrete and utilizing a stacked horizontal bar graph told the story very clearly that, from 2000 to 2018, 10% of countries worldwide decreased the enrollment rate difference between men and women to below 5 percentage points. It would seem like this hypothesis was absolute; however, when we began developing a counter to our proposition, we made the difficult realization that we couldn’t just analyze the overall trend of enrollment rates across each country. Instead, we needed to approach our view of the data differently. We then aggregated the data grouping enrollment rates of different global regions to observe an opposing pattern of distinctly different enrollment rates between gender in areas such as North Africa and the Middle East.</p>
+</section>
+</main>
+
+</body>
+</html>
